@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Language Spoken/Used at Home by Aboriginal and Torres Strait Islander Persons (1991–2021)",
+  "width": "container",
+  "height": 420,
+  "background": "white",
+
+  "data": { "url": "data/table_1_1_language_spoken_wide.csv" },
+
+  "transform": [
+    { "filter": "datum.Category != 'Total'" },
+    {
+      "fold": ["1991", "1996", "2001", "2006", "2011", "2016", "2021"],
+      "as": ["Year", "Percent"]
+    },
+    { "calculate": "toNumber(datum.Percent)", "as": "PercentNum" }
+  ],
+
+  "mark": { "type": "line", "point": { "filled": true, "size": 45 } },
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Census Year",
+      "axis": { "grid": false }
+    },
+    "y": {
+      "field": "PercentNum",
+      "type": "quantitative",
+      "title": "Share of persons (%)",
+      "axis": { "grid": false, "format": ".1f" }
+    },
+    "color": {
+      "field": "Category",
+      "type": "nominal",
+      "title": "Language Category"
+    },
+    "tooltip": [
+      { "field": "Category", "type": "nominal" },
+      { "field": "Year", "type": "ordinal" },
+      { "field": "PercentNum", "type": "quantitative", "title": "Percent", "format": ".1f" }
+    ]
+  },
+
+  "config": {
+    "background": "white"
+  }
+}

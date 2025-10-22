@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Aboriginal and Torres Strait Islander Population Growth (2011–2021)",
+  "description": "Total Aboriginal and Torres Strait Islander population by year",
+  "width": 900,
+  "height": 420,
+
+  "data": { "url": "data/aboriginal_population_total.csv" },
+
+  "mark": { "type": "bar", "cornerRadiusEnd": 3, "width": { "band": 0.7 } },
+
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "title": "Year",
+      "sort": "ascending"
+    },
+    "y": {
+      "field": "Total_Population",
+      "type": "quantitative",
+      "title": "Total Population",
+      "axis": { "format": "," }
+    },
+    "color": { "value": "#4C78A8" },
+    "tooltip": [
+      { "field": "Year", "type": "ordinal" },
+      { "field": "Total_Population", "type": "quantitative", "title": "Population", "format": "," }
+    ]
+  },
+
+  "config": {
+    "view": { "stroke": "transparent" },
+    "axis": { "grid": false }
+  }
+}
