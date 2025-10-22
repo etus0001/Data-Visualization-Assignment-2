@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Indigenous Languages and Population Dashboard — Mini Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Indigenous Languages and Population Dashboard</h1>
+      <p class="subtitle">A visual exploration of Indigenous language distribution, usage trends, and population growth (1991–2021)</p>
+    </header>
+
+    <section class="card">
+      <h2>Indigenous Languages Across Australia</h2>
+      <div id="austlang-map" class="viz"></div>
+      <p class="insight">
+        <strong>Insight:</strong> The map illustrates the distribution of Aboriginal and Torres Strait Islander languages across Australia.
+A clear pattern emerges: the northern and central regions—particularly the Northern Territory, Queensland, and parts of Western Australia—show a dense concentration of Indigenous languages, representing areas where traditional languages remain strong.
+In contrast, southern and southeastern states display far fewer points, reflecting the greater impact of colonisation and language displacement in these regions.
+Overall, the visual highlights a north-to-south decline in language density, underscoring both the rich linguistic diversity of Indigenous Australia and the ongoing need for language revitalisation and preservation efforts.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Language Spoken/Used at Home (1991–2021)</h2>
+      <div id="language-line" class="viz"></div>
+      <p class="insight">
+  The line graph displays the distribution of language use for the selected census year.
+  Across the period (1991–2021), Australian Indigenous language use declines (from
+  about <strong>16.4%</strong> to <strong>9.5%</strong>), while English increases (from
+  <strong>78.9%</strong> to <strong>84.1%</strong>). “Other language” remains consistently low and
+  “Not stated” fluctuates slightly. The pattern indicates a gradual shift toward English
+  in daily communication and highlights the importance of ongoing language
+  revitalisation efforts for Aboriginal and Torres Strait Islander communities.
+</p>
+    </section>
+
+   
+    <section class="card">
+      <h2>Aboriginal & Torres Strait Islander Population (2011–2021)</h2>
+      <div id="population-bar" class="viz"></div>
+      <p class="insight">
+        <strong>Insight:</strong> The Aboriginal and Torres Strait Islander population grew from
+        <strong>806,090</strong> in <strong>2011</strong> to <strong>983,709</strong> in <strong>2021</strong> —
+        an increase of about <strong>177,619</strong> people (~<strong>22%</strong>). Growth is steady year-over-year
+        (no declines), averaging roughly <strong>~17.7k</strong> additional people per year, with the largest
+        annual jump between 2011 and 2012.
+      </p>
+    </section>
+  </main>
+
+  <script src="js/embed.js"></script>
+</body>
+</html>
